@@ -9,3 +9,5 @@ to get all the info you need.
 The level 5 hints implies that we migth need to modify the key 'INTELLIGENCECHECK' in some way to get the correct key.
 So I made a little program with the Godot engine for the UI
 to help anyone who wants to decrypt this puzzle.
+
+If you want to use this program, install godot, download this project and build it.
