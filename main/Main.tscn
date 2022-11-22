@@ -1,0 +1,244 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://KeyPresets.gd" type="Script" id=1]
+[ext_resource path="res://DataPresets.gd" type="Script" id=2]
+[ext_resource path="res://DataTextEdit.gd" type="Script" id=3]
+[ext_resource path="res://KeyLineEdit.gd" type="Script" id=4]
+[ext_resource path="res://DecryptButton.gd" type="Script" id=5]
+[ext_resource path="res://ResultTextEdit.gd" type="Script" id=6]
+[ext_resource path="res://KeyModifierLineEdit.gd" type="Script" id=7]
+[ext_resource path="res://KeyModifierHelp.tscn" type="PackedScene" id=8]
+[ext_resource path="res://DecryptEncryptHelp.tscn" type="PackedScene" id=9]
+[ext_resource path="res://DataHelp.tscn" type="PackedScene" id=10]
+[ext_resource path="res://KeyHelp.tscn" type="PackedScene" id=11]
+[ext_resource path="res://ResultHelp.tscn" type="PackedScene" id=12]
+[ext_resource path="res://HelpMenuButton.gd" type="Script" id=13]
+[ext_resource path="res://Hack_font.tres" type="DynamicFont" id=14]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.298039, 0.298039, 0.298039, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.172549, 0.164706, 0.196078, 1 )
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Separators" type="Node" parent="."]
+
+[node name="VSeparator" type="VSeparator" parent="Separators"]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -5.0
+margin_right = 5.0
+
+[node name="HSeparator" type="HSeparator" parent="Separators"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -5.0
+margin_bottom = 5.0
+
+[node name="ResultPanel" type="Panel" parent="Separators"]
+anchor_left = 0.75
+anchor_top = 0.5
+anchor_right = 0.75
+anchor_bottom = 0.5
+margin_left = -25.0
+margin_top = -8.0
+margin_right = 25.0
+margin_bottom = 8.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="TopPanel" type="Panel" parent="Separators"]
+anchor_right = 1.0
+margin_bottom = 32.0
+
+[node name="DataNodes" type="Node" parent="."]
+
+[node name="DataTextEdit" type="TextEdit" parent="DataNodes"]
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 50.0
+margin_right = -10.0
+margin_bottom = -10.0
+rect_pivot_offset = Vector2( 1420, 511 )
+custom_fonts/font = ExtResource( 14 )
+draw_spaces = true
+wrap_enabled = true
+script = ExtResource( 3 )
+
+[node name="DataPresets" type="MenuButton" parent="DataNodes"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 113.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 14 )
+text = "Data presets"
+flat = false
+items = [ "level 1 data", null, 0, false, false, 0, 0, null, "", false, "level 2 data", null, 0, false, false, 1, 0, null, "", false, "level 3 data", null, 0, false, false, 2, 0, null, "", false, "level 4 data", null, 0, false, false, 3, 0, null, "", false, "level 5 data", null, 0, false, false, 4, 0, null, "", false ]
+script = ExtResource( 2 )
+
+[node name="DataLabel" type="Label" parent="DataNodes"]
+anchor_left = 0.25
+anchor_right = 0.25
+margin_left = -16.0
+margin_top = 32.0
+margin_right = 16.0
+margin_bottom = 49.0
+custom_fonts/font = ExtResource( 14 )
+text = "Data"
+
+[node name="KeyNodes" type="Node" parent="."]
+
+[node name="KeyLineEdit" type="LineEdit" parent="KeyNodes"]
+anchor_left = 0.5
+anchor_right = 1.0
+margin_left = 10.0
+margin_top = 50.0
+margin_right = -10.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 14 )
+placeholder_text = "Type your key here"
+script = ExtResource( 4 )
+
+[node name="KeyPresets" type="MenuButton" parent="KeyNodes"]
+margin_left = 120.0
+margin_top = 5.0
+margin_right = 220.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 14 )
+text = "Key Presets"
+flat = false
+items = [ "level 1 Key", null, 0, false, false, 0, 0, null, "", false, "level 2 Key", null, 0, false, false, 1, 0, null, "", false, "level 3 Key", null, 0, false, false, 2, 0, null, "", false, "level 4 Key", null, 0, false, false, 3, 0, null, "", false ]
+script = ExtResource( 1 )
+
+[node name="KeyLabel" type="Label" parent="KeyNodes"]
+anchor_left = 0.75
+anchor_right = 0.75
+margin_left = -12.0
+margin_top = 32.0
+margin_right = 12.0
+margin_bottom = 49.0
+custom_fonts/font = ExtResource( 14 )
+text = "Key"
+
+[node name="KeyModifierLineEdit" type="LineEdit" parent="KeyNodes"]
+anchor_left = 0.5
+anchor_right = 1.0
+margin_left = 10.0
+margin_top = 100.0
+margin_right = -10.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 14 )
+placeholder_text = "Key Modifyer"
+script = ExtResource( 7 )
+
+[node name="ResultNodes" type="Node" parent="."]
+
+[node name="ResultTextEdit" type="TextEdit" parent="ResultNodes"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+custom_colors/font_color_readonly = Color( 0.882353, 0.882353, 0.882353, 1 )
+custom_fonts/font = ExtResource( 14 )
+custom_styles/read_only = SubResource( 2 )
+readonly = true
+wrap_enabled = true
+script = ExtResource( 6 )
+
+[node name="ResultLabel" type="Label" parent="ResultNodes"]
+anchor_left = 0.75
+anchor_top = 0.5
+anchor_right = 0.75
+anchor_bottom = 0.5
+margin_left = -24.0
+margin_top = -8.0
+margin_right = 24.0
+margin_bottom = 9.0
+custom_fonts/font = ExtResource( 14 )
+text = "Result"
+
+[node name="DecryptButton" type="Button" parent="ResultNodes"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 25.0
+margin_top = -60.0
+margin_right = 125.0
+margin_bottom = -25.0
+custom_fonts/font = ExtResource( 14 )
+text = "Decrypt"
+script = ExtResource( 5 )
+
+[node name="EncryptButton" type="Button" parent="ResultNodes"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -125.0
+margin_top = -60.0
+margin_right = -25.0
+margin_bottom = -25.0
+custom_fonts/font = ExtResource( 14 )
+text = "Encrypt"
+
+[node name="Misc" type="Node" parent="."]
+
+[node name="OptionsMenuButton" type="MenuButton" parent="Misc"]
+visible = false
+margin_left = 199.0
+margin_top = 5.0
+margin_right = 262.0
+margin_bottom = 25.0
+text = "Options"
+flat = false
+items = [ "Keep line return in Data", null, 1, false, false, 0, 0, null, "", false ]
+
+[node name="HelpMenuButton" type="MenuButton" parent="Misc"]
+margin_left = 227.0
+margin_top = 5.0
+margin_right = 271.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 14 )
+text = "Help"
+flat = false
+items = [ "Data", null, 0, false, false, 0, 0, null, "", false, "Key", null, 0, false, false, 1, 0, null, "", false, "Key Modifier", null, 0, false, false, 2, 0, null, "", false, "Decrypt / Encrypt", null, 0, false, false, 3, 0, null, "", false, "Result", null, 0, false, false, 4, 0, null, "", false ]
+script = ExtResource( 13 )
+
+[node name="DataHelp" parent="Misc/HelpMenuButton" instance=ExtResource( 10 )]
+
+[node name="KeyHelp" parent="Misc/HelpMenuButton" instance=ExtResource( 11 )]
+visible = false
+
+[node name="KeyModifierHelp" parent="Misc/HelpMenuButton" instance=ExtResource( 8 )]
+visible = false
+
+[node name="DecryptEncryptHelp" parent="Misc/HelpMenuButton" instance=ExtResource( 9 )]
+visible = false
+
+[node name="ResultHelp" parent="Misc/HelpMenuButton" instance=ExtResource( 12 )]
+visible = false
+
+[connection signal="crypting" from="DataNodes/DataTextEdit" to="ResultNodes/ResultTextEdit" method="_on_DataTextEdit_crypting"]
+[connection signal="preset_chosen" from="DataNodes/DataPresets" to="DataNodes/DataTextEdit" method="_on_DataPresets_preset_chosen"]
+[connection signal="crypting" from="KeyNodes/KeyLineEdit" to="DataNodes/DataTextEdit" method="_on_KeyLineEdit_crypting"]
+[connection signal="preset_chosen" from="KeyNodes/KeyPresets" to="KeyNodes/KeyLineEdit" method="_on_KeyPresets_preset_chosen"]
+[connection signal="crypting" from="KeyNodes/KeyModifierLineEdit" to="KeyNodes/KeyLineEdit" method="_on_KeyModifierLineEdit_crypting"]
+[connection signal="button_up" from="ResultNodes/DecryptButton" to="KeyNodes/KeyModifierLineEdit" method="_on_DecryptButton_button_up"]
+[connection signal="button_up" from="ResultNodes/EncryptButton" to="KeyNodes/KeyModifierLineEdit" method="_on_EncryptButton_button_up"]
+[connection signal="help_chosen" from="Misc/HelpMenuButton" to="Misc/HelpMenuButton/DataHelp" method="_on_HelpMenuButton_help_chosen"]
+[connection signal="help_chosen" from="Misc/HelpMenuButton" to="Misc/HelpMenuButton/KeyHelp" method="_on_HelpMenuButton_help_chosen"]
+[connection signal="help_chosen" from="Misc/HelpMenuButton" to="Misc/HelpMenuButton/KeyModifierHelp" method="_on_HelpMenuButton_help_chosen"]
+[connection signal="help_chosen" from="Misc/HelpMenuButton" to="Misc/HelpMenuButton/DecryptEncryptHelp" method="_on_HelpMenuButton_help_chosen"]
+[connection signal="help_chosen" from="Misc/HelpMenuButton" to="Misc/HelpMenuButton/ResultHelp" method="_on_HelpMenuButton_help_chosen"]

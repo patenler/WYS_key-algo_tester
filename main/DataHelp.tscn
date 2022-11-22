@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://DataHelp.gd" type="Script" id=1]
+[ext_resource path="res://Hack_font.tres" type="DynamicFont" id=2]
+
+[node name="DataHelp" type="WindowDialog"]
+margin_right = 300.0
+margin_bottom = 200.0
+window_title = "Data Help"
+script = ExtResource( 1 )
+
+[node name="TextEdit" type="TextEdit" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "write any text in the data box,
+it is the text that will be decrypted/encrypted"
+readonly = true
+wrap_enabled = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/normal_font = ExtResource( 2 )
+text = "write any text in the data box,
+it is the text that will be decrypted/encrypted"

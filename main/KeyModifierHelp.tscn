@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://KeyModifierHelp.gd" type="Script" id=1]
+[ext_resource path="res://Hack_Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 14
+font_data = ExtResource( 2 )
+
+[node name="KeyModifierHelp" type="WindowDialog"]
+visible = true
+margin_right = 400.0
+margin_bottom = 350.0
+window_title = "Key Modifier Help"
+script = ExtResource( 1 )
+
+[node name="TextEdit" type="TextEdit" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "The key modifier is a formula that will be applied to each element of the key.
+The key modifier only works on integers.
+
+The supported characters are :
+ + - * () % | x [] i and integers
+with symbol priorities from top to bottom being :
+ () * | % -+
+
++ is addition, - substraction, * multiplication.
+% is the positive modulo operator.
+| is concatenation (ex: 1|2 == 12).
+
+x is the key and 'i' is the current index, you can access the current element of the key being processed by writing x[i] or x.
+you can use 'i' outside of [] and any formula can go inside of []."
+readonly = true
+wrap_enabled = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "The key modifier is a formula that will be applied to each element of the key.
+The key modifier only works on integers.
+
+The supported characters are :
+ + - * () % | x [] i and integers
+with symbol priorities from top to bottom being :
+ () * | % -+
+
++ is addition, - substraction, * multiplication.
+% is the positive modulo operator.
+| is concatenation (ex: 1|2 == 12).
+
+x is the key and 'i' is the current index, you can access the current element of the key being processed by writing x[i] or x.
+you can use 'i' outside of [] and any formula can go inside of []."
