@@ -10,4 +10,4 @@ The level 5 hints implies that we migth need to modify the key 'INTELLIGENCECHEC
 So I made a little program with the Godot engine for the UI
 to help anyone who wants to decrypt this puzzle.
 
-If you want to use this program, install godot, download this project and build it.
+If you want to use this program, download the file in the exports folder according to your OS.
